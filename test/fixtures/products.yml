@@ -4,10 +4,17 @@ one:
   title: MyString
   description: MyText
   image_url: MyString
-  price: 
+  price: 4.44
 
 two:
   title: MyString
   description: MyText
   image_url: MyString
-  price: 
+  price:     5.44
+
+ruby:
+  title:  Programming Ruby
+  description:          A Great book on Ruby
+  image_url: ruby.jpg
+  price:      22.22
+
