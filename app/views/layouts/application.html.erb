@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Depot</title>
-  <%= stylesheet_link_tag "application" %>
+  <title>Pragmatic Online Store</title>
+  <%= stylesheet_link_tag "scaffolds" %>
+  <%= stylesheet_link_tag "depot", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="store">
+<div id="banner">
+  <%= image_tag("logo.png") %>
+  <%= @page_title || "Pragmatic bookshelf" %>
+</div>
 
-<%= yield %>
 
+<div id="columns">
+  <div id="side">
+
+    <a href="http://www....">Home</a><br/>
+    <a href="http://www..../faq">Questions</a><br/>
+    <a href="http://www..../news">News</a><br/>
+    <a href="http://www..../contact">Contact</a><br/>
+  </div>
+  <div id="main">
+    <%= yield %><!-- <label id="code.depot.e.include"/> -->
+  </div>
+
+
+</div>
+</div>
 </body>
 </html>
