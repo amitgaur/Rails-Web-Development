@@ -14,6 +14,7 @@ class CartsController < ApplicationController
   # GET /carts/1.json
   def show
     @cart = Cart.find(params[:id])
+    session[:counter] = 0;
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,6 +42,7 @@ class CartsController < ApplicationController
   # POST /carts.json
   def create
     @cart = Cart.new(params[:cart])
+    session[:counter] = 0;
 
     respond_to do |format|
       if @cart.save
@@ -57,7 +59,7 @@ class CartsController < ApplicationController
   # PUT /carts/1.json
   def update
     @cart = Cart.find(params[:id])
-
+    session[:counter] = 0;
     respond_to do |format|
       if @cart.update_attributes(params[:cart])
         format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
