@@ -14,7 +14,7 @@ class CartsController < ApplicationController
   # GET /carts/1.json
   def show
     @cart = Cart.find(params[:id])
-    session[:counter] = 0;
+    session[:counter] = 0
 
     respond_to do |format|
       format.html # show.html.erb
