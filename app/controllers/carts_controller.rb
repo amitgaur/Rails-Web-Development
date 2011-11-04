@@ -13,8 +13,15 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
-    @cart = Cart.find(params[:id])
-    session[:counter] = 0
+    begin
+      @cart = Cart.find(params[:id])
+      session[:counter] = 0
+    rescue ActiveRecord::RecordNotFound
+      logger.error "Attempt to access invalid cart with id : #{params[:id]}"
+      redirect_to store_url, :notice => "Invalid cart"
+
+    end
+
 
     respond_to do |format|
       format.html # show.html.erb

@@ -49,6 +49,11 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.1)
+    little-plugger (1.1.2)
+    logging (1.6.1)
+      little-plugger (>= 1.1.2)
+    logging-rails (0.3.0)
+      logging (~> 1.6.1)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -115,6 +120,7 @@ DEPENDENCIES
   annotate (= 2.4.1.beta1)
   coffee-rails (~> 3.1.1)
   jquery-rails
+  logging-rails
   minitest (>= 2.6.2)
   rails (= 3.1.1)
   sass-rails (~> 3.1.4)

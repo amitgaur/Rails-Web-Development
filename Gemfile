@@ -8,6 +8,9 @@ gem 'rails', '3.1.1'
 gem 'sqlite3'
 
 gem 'annotate', '2.4.1.beta1'
+
+#      https://github.com/TwP/logging-rails#readme
+gem 'logging-rails', :require => 'logging/rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
