@@ -33,7 +33,15 @@ class CartsController < ApplicationController
   # GET /carts/new
   # GET /carts/new.json
   def new
-    @cart = Cart.new
+
+    if !session[:cart_id].nil?
+      logger.error "Attempt to create a new cart for an existing cart in session with id  #{session[:cart_id]}"
+      redirect_to cart_url :id => session[:cart_id], :notice => "Existing cart already associated with session"
+      return
+    else
+      @cart = Cart.new
+      session[:cart_id] = @cart.id
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -84,9 +92,10 @@ class CartsController < ApplicationController
   def destroy
     @cart = Cart.find(params[:id])
     @cart.destroy
+    session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to carts_url }
+      format.html { redirect_to store_url, :notice => "Your cart is empty now" }
       format.json { head :ok }
     end
   end
