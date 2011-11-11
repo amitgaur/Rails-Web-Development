@@ -1,12 +1,2 @@
-<% if notice %>
-<p id="notice"><%= notice %></p> <% end %>
-<h1> Pragmatic Cart</h1>
-<h2>Your Pragmatic Cart</h2>
-<ul>
-  <% @cart.line_items.each do |item| %>
-      <li><%= item.quantity %> &times; <%= item.product.title %></li>
-  <% end %> </ul>
-
-
-
-<%= button_to 'Empty Cart', @cart, :method=> :delete, :confirm => 'Are you sure' %>
+0
+<%= render(@cart) %>
