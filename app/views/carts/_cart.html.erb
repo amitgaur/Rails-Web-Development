@@ -1,20 +1,21 @@
+<% unless cart.is_empty %>
+    <div class="cart_title">Your Cart</div>
+    <table>
 
-<div class="cart_title">Your Cart</div>
-<table>
-<!-- START_HIGHLIGHT -->
-  <%= render(cart.line_items) %>
-<!-- END_HIGHLIGHT -->
+      <%= render(cart.line_items) %>
 
-  <tr class="total_line">
-    <td colspan="2">Total</td>
-<!-- START_HIGHLIGHT -->
-    <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
-<!-- END_HIGHLIGHT -->
-  </tr>
 
-</table>
+      <tr class="total_line">
+        <td colspan="2">Total</td>
 
-<!-- START_HIGHLIGHT -->
-<%= button_to 'Empty cart', cart, :method => :delete,
-#<!-- END_HIGHLIGHT -->
-    :confirm => 'Are you sure?' %>
+        <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+
+      </tr>
+
+    </table>
+
+
+    <%= button_to 'Empty cart', cart, :method => :delete,
+
+                  :confirm => 'Are you sure?' %>
+<% end %>

@@ -16,17 +16,23 @@
 
 <div id="columns">
   <div id="side">
-    <div id="cart">
-    <%=render @cart %>
-    </div>
-    <a href="http://localhost:3000/">Home</a><br/>
-    <a href="http://www..../faq">Questions</a><br/>
-    <a href="http://www..../news">News</a><br/>
-    <a href="http://www..../contact">Contact</a><br/>
+    <% if @cart %>
+        <!-- END_HIGHLIGHT -->
+        <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
+            <%= render @cart %>
+        <% end %>
+        <!-- START_HIGHLIGHT -->
+    <% end %>
+
   </div>
-  <div id="main">
-    <%= yield %><!-- <label id="code.depot.e.include"/> -->
-  </div>
+  <a href="http://localhost:3000/">Home</a><br/>
+  <a href="http://www..../faq">Questions</a><br/>
+  <a href="http://www..../news">News</a><br/>
+  <a href="http://www..../contact">Contact</a><br/>
+</div>
+<div id="main">
+  <%= yield %><!-- <label id="code.depot.e.include"/> -->
+</div>
 
 
 </div>

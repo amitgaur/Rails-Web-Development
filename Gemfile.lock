@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/rails/prototype-rails.git
+  revision: 72998e155d8aae552abc8e0ad527bb7d8ecc31cf
+  specs:
+    prototype-rails (3.1.0)
+      rails (~> 3.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -122,6 +129,7 @@ DEPENDENCIES
   jquery-rails
   logging-rails
   minitest (>= 2.6.2)
+  prototype-rails!
   rails (= 3.1.1)
   sass-rails (~> 3.1.4)
   sqlite3

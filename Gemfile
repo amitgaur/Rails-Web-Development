@@ -8,6 +8,7 @@ gem 'rails', '3.1.1'
 gem 'sqlite3'
 
 gem 'annotate', '2.4.1.beta1'
+gem 'prototype-rails', :git => 'git://github.com/rails/prototype-rails.git'
 
 #      https://github.com/TwP/logging-rails#readme
 gem 'logging-rails', :require => 'logging/rails'
