@@ -30,5 +30,5 @@ Depot::Application.configure do
 
   # Set the logging destination(s)
   config.log_to = %w[stdout file]
-  config.action_view.debug_rjs = true
+
 end
